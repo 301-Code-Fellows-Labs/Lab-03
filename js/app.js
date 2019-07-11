@@ -57,8 +57,9 @@ function sortByHorns (arr){
 
 function titleSortListener() { 
   $('#title').click( () => { 
-    sortByTitle(Images.list);
-    console.log("Shoul be sorted", Images.list);
+
+    Images.list.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0);
+    console.log(Images.list);
     clearAllImages();
     displayAllImages();
   })
@@ -66,7 +67,8 @@ function titleSortListener() {
 
 function hornSortListener() { 
   $('#horn').click( () => { 
-    sortByHorns(Images.list);
+    Images.list.sort( (a,b) => a.horns > b.horns ? 1 : a.horns < b.horns ? -1 : 0);
+    console.log(Images.list);
     clearAllImages();
     displayAllImages();
   })
