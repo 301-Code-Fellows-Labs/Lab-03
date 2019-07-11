@@ -11,7 +11,7 @@
 
 * Finish time: 9-30am 
 
-* Actual time needed to complete:  
+* Actual time needed to complete:  20 min
  
  
 ## Feature 2: Templating
@@ -22,9 +22,9 @@
 
 * Start time: 9-30am
 
-* Finish time: 11-00pm 
+* Finish time: 10-30pm 
 
-* Actual time needed to complete:  
+* Actual time needed to complete:  1h
  
  
 ## Feature 3: Styling with Flexbox
@@ -35,9 +35,9 @@
 
 * Start time: 11-00am
 
-* Finish time: 12-00pm 
+* Finish time: 11-10pm 
 
-* Actual time needed to complete: 
+* Actual time needed to complete: 10min
 
 ## Feature 4: Sort the images
 
@@ -45,8 +45,8 @@
 
 * Estimate of time needed to complete: 1h
 
-* Start time: 12-00am
+* Start time: 11-10am
 
-* Finish time: 1-00pm 
+* Finish time: 12-22pm 
 
-* Actual time needed to complete: 
+* Actual time needed to complete: 1h 10min

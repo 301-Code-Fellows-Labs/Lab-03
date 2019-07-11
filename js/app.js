@@ -13,49 +13,77 @@ function Images(url, title, description, keyword, horns) {
 
 Images.list = [];
 const optionArray = [];
-let counter =0;
-
-$.get('./data/page-1.json', (data) => {
-  data.forEach(element => {
-    new Images(element.image_url, element.title, element. description, element.keyword, element.horns);
-  })
-  optionListener();
-});
 
 
 Images.prototype.displayImage = function() { 
-  const $newImage = $('#photo-template').clone();
-
-  $newImage.find('h2').text(this.title).attr('keyword', `${this.keyword}`);
-  $newImage.find('p').text(this.description).attr('keyword', `${this.keyword}`);
-  $newImage.find('img').attr({ src: this.image_url, 
-    alt: this.keyword});
-
-  $('main').append($newImage);
-  if (counter === 0) {
-    $('#photo-template:first-child').remove();
-  }
-  counter++;
-  };
+  const photoTemplate = $('#photo-template').html();
+  const photoTemplateScript = Handlebars.compile(photoTemplate);
+  const image = {'title': this.title, 'image_url': this.image_url, 'description': this.description, 'keyword': this.keyword};
+  const html = photoTemplateScript(image);
+  $('main').append(html);
+};
 
 Images.prototype.displayOptions = function() { 
   if (!optionArray.includes(this.keyword)) {
-    $('select').append(`<option>${this.keyword}</option>`);
     optionArray.push(this.keyword);
+    const optionTemplate = $('#option-template').html();
+    const optionTemplateScript = Handlebars.compile(optionTemplate);
+    const option = {'keyword': this.keyword};
+    const html = optionTemplateScript(option);
+    $('select').append(html);
   }
 }
 
 function optionListener() { 
-  $('select').change( () => { 
+  $('select').change(() => { 
     const $selectedImage = $('select option:selected').text();
-    console.log($selectedImage);
-    
-    $('img').not(`[alt="${$selectedImage}"]`).hide();
-    $('h2').not(`[alt="${$selectedImage}"]`).hide();
-    $('p').not(`[alt="${$selectedImage}"]`).hide();
-    $(`img[alt="${$selectedImage}"]`).show();
-    $(`h2[keyword="${$selectedImage}"]`).show();
-    $(`p[keyword="${$selectedImage}"]`).show();
-
+    if ($selectedImage === 'Filter by Keyword') {
+      $('img').show();
+    } else {
+      $(`section[keyword!=${$selectedImage}]`).hide();
+      $(`section[keyword=${$selectedImage}]`).show();
+    }
   })
+}
+
+function sortByTitle (arr){
+  arr.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1: 0);
+  return arr;
+}
+function sortByHorns (arr){
+  arr.sort( (a,b) => b.horns - a.horns);
+  return arr;
+}
+
+function titleSortListener() { 
+  $('#title').click( () => { 
+
+    Images.list.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0);
+    console.log(Images.list);
+    clearAllImages();
+    displayAllImages();
+  })
+}
+
+function hornSortListener() { 
+  $('#horn').click( () => { 
+    Images.list.sort( (a,b) => a.horns > b.horns ? 1 : a.horns < b.horns ? -1 : 0);
+    console.log(Images.list);
+    clearAllImages();
+    displayAllImages();
+  })
+}
+
+function displayAllImages() { 
+  const photoTemplate = $('#photo-template').html();
+  const photoTemplateScript = Handlebars.compile(photoTemplate);
+  Images.list.forEach(object => {
+    const image = {'title': object.title, 'image_url': object.image_url, 'description': object.description, 'keyword': object.keyword};
+    const html = photoTemplateScript(image);
+    $('main').append(html);
+  })
+}
+
+function clearAllImages() { 
+  $('section').remove();
 }

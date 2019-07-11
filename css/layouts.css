@@ -1,19 +1,21 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header{
+    text-align: center;
+    padding-bottom: 50px;
+  
+}
 .photo{
-    float: left;
     width: 250px;
     overflow-wrap: break-word;
     margin: 10px;
     height: 400px;
+    text-align: center;
 }
 img {
     width: 200px;
     object-fit: contain;
-}
-
-header{
-    text-align: center;
-}
-footer{
-    clear: both;
-    text-align: center;
 }
