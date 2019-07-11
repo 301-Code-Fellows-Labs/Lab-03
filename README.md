@@ -11,7 +11,7 @@
 
 * Finish time: 9-30am 
 
-* Actual time needed to complete:  
+* Actual time needed to complete:  20 min
  
  
 ## Feature 2: Templating
