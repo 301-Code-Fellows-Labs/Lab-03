@@ -2,13 +2,16 @@ h1{
     font-family: 'Indie Flower', cursive;
     font-size: 4em; 
     display: inline-block;
-    padding: 20px;
     color: rgb(136, 6, 6);
+    padding-top: 30px;
 }
 
 h2 {
     font-family: 'Indie Flower', cursive;
-    font-size: 1em; 
+    font-size: 1.5em; 
+    padding-bottom: 10px;
+    text-align: center;
+    color: rgb(30, 6, 136);
 }
 
 nav {
