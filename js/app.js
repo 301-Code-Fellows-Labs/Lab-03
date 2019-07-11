@@ -15,13 +15,6 @@ Images.list = [];
 const optionArray = [];
 let counter =0;
 
-$.get('./data/page-1.json', (data) => {
-  data.forEach(element => {
-    new Images(element.image_url, element.title, element. description, element.keyword, element.horns);
-  })
-  optionListener();
-});
-
 
 Images.prototype.displayImage = function() { 
   const $newImage = $('#photo-template').clone();
@@ -36,7 +29,7 @@ Images.prototype.displayImage = function() {
     $('#photo-template:first-child').remove();
   }
   counter++;
-  };
+};
 
 Images.prototype.displayOptions = function() { 
   if (!optionArray.includes(this.keyword)) {
