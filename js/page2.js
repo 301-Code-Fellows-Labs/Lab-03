@@ -3,4 +3,6 @@ $.get('./data/page-2.json', (data) => {
     new Images(element.image_url, element.title, element. description, element.keyword, element.horns);
   })
   optionListener();
+  titleSortListener();
+  hornSortListener();
 });

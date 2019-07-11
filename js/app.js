@@ -49,6 +49,18 @@ function optionListener() {
 function titleSortListener() { 
   $('#title').click( () => { 
     Images.list.sort( (a,b) => a.title > b.title)
+    console.log(Images.list);
+    clearAllImages();
+    displayAllImages();
+  })
+}
+
+function hornSortListener() { 
+  $('#horn').click( () => { 
+    console.log('went in');
+    Images.list.sort( (a,b) => a.horn < b.horn)
+    clearAllImages();
+    displayAllImages();
   })
 }
 
@@ -63,5 +75,5 @@ function displayAllImages() {
 }
 
 function clearAllImages() { 
-
+  $('section').hide();
 }
