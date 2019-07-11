@@ -16,16 +16,18 @@
         <img src="{{image_url}}" alt="{{title}}">
         <p>{{description}}</p>
       </section>
-    
     </script> 
-
+  </script> 
+    <script id='option-template' type="text/x-handlebars-template">
+      <option>{{keyword}}</option>
+    </section>
   </head>
   <body>
     <header>
       <h1>The Gallery - page 2</h1><br>
       <nav> <a href = "index.html"> <<< Page 1 </a> </nav>
       <select>
-        <option value="default" id='option-template'>Filter by Keyword</option>
+        <option value="default">Filter by Keyword</option>
       </select>
     </header>
     <main>
