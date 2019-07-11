@@ -17,18 +17,26 @@ let counter =0;
 
 
 Images.prototype.displayImage = function() { 
-  const $newImage = $('#photo-template').clone();
+  // const $newImage = $('#photo-template').clone();
 
-  $newImage.find('h2').text(this.title).attr('keyword', `${this.keyword}`);
-  $newImage.find('p').text(this.description).attr('keyword', `${this.keyword}`);
-  $newImage.find('img').attr({ src: this.image_url, 
-    alt: this.keyword});
+  // $newImage.find('h2').text(this.title).attr('keyword', `${this.keyword}`);
+  // $newImage.find('p').text(this.description).attr('keyword', `${this.keyword}`);
+  // $newImage.find('img').attr({ src: this.image_url, 
+  //   alt: this.keyword});
 
-  $('main').append($newImage);
-  if (counter === 0) {
-    $('#photo-template:first-child').remove();
-  }
-  counter++;
+  // $('main').append($newImage);
+  // if (counter === 0) {
+  //   $('#photo-template:first-child').remove();
+  // }
+  // counter++;
+
+  console.log(typeof this.title);
+  const photoTemplate = $('#photo-template').html();
+  const photoTemplateScript = Handlebars.compile(photoTemplate);
+  const image = {'title': this.title, 'image_url': this.image_url, 'description': this.description};
+  const html = photoTemplateScript(image);
+  $('main').append(html);
+
 };
 
 Images.prototype.displayOptions = function() { 
