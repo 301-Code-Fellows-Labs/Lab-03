@@ -46,10 +46,19 @@ function optionListener() {
   })
 }
 
+function sortByTitle (arr){
+  arr.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1: 0);
+  return arr;
+}
+function sortByHorns (arr){
+  arr.sort( (a,b) => b.horns - a.horns);
+  return arr;
+}
+
 function titleSortListener() { 
   $('#title').click( () => { 
-    Images.list.sort( (a,b) => a.title > b.title)
-    console.log(Images.list);
+    sortByTitle(Images.list);
+    console.log("Shoul be sorted", Images.list);
     clearAllImages();
     displayAllImages();
   })
@@ -57,8 +66,7 @@ function titleSortListener() {
 
 function hornSortListener() { 
   $('#horn').click( () => { 
-    console.log('went in');
-    Images.list.sort( (a,b) => a.horn - b.horn)
+    sortByHorns(Images.list);
     clearAllImages();
     displayAllImages();
   })
