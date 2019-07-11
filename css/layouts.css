@@ -1,5 +1,11 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .photo{
-    float: left;
+    /* float: left; */
     width: 250px;
     overflow-wrap: break-word;
     margin: 10px;

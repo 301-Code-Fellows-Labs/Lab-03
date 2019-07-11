@@ -22,9 +22,9 @@
 
 * Start time: 9-30am
 
-* Finish time: 11-00pm 
+* Finish time: 10-30pm 
 
-* Actual time needed to complete:  
+* Actual time needed to complete:  1h
  
  
 ## Feature 3: Styling with Flexbox
