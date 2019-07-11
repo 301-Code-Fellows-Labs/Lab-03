@@ -85,5 +85,5 @@ function displayAllImages() {
 }
 
 function clearAllImages() { 
-  $('section').hide();
+  $('section').remove();
 }
