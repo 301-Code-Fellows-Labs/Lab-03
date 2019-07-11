@@ -1,0 +1,19 @@
+.photo{
+    float: left;
+    width: 250px;
+    overflow-wrap: break-word;
+    margin: 10px;
+    height: 400px;
+}
+img {
+    width: 200px;
+    object-fit: contain;
+}
+
+header{
+    text-align: center;
+}
+footer{
+    clear: both;
+    text-align: center;
+}
