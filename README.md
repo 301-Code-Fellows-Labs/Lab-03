@@ -1,41 +1,52 @@
-# lab-02 - Lab 02: jQuery Selectors and Events
-### 07/10/2019
+# lab-03: Flexbox and Templating
+### 07/11/2019
 
-## Task 1.
+## Feature 1: Pagination
 
-* Number and name of feature: Display images
+* Number and name of feature: Pagination
 
-* Estimate of time needed to complete: 1.5h
+* Estimate of time needed to complete: 0.5h
 
 * Start time: 9-00am
 
-* Finish time: 10-40am 
+* Finish time: 9-30am 
 
-* Actual time needed to complete:  1h 40m <= pretty accurate
+* Actual time needed to complete:  
  
  
-## Task 2.
+## Feature 2: Templating
 
-* Number and name of feature: Filter images
+* Number and name of feature: Templating
 
 * Estimate of time needed to complete: 1.5h
 
-* Start time: 10-30am
+* Start time: 9-30am
 
-* Finish time: 11-50pm 
+* Finish time: 11-00pm 
 
-* Actual time needed to complete:  1h 20min
+* Actual time needed to complete:  
  
  
-## Task 3.
+## Feature 3: Styling with Flexbox
 
-* Number and name of feature: Style the application
+* Number and name of feature: Styling with Flexbox
 
-* Estimate of time needed to complete: 1.5h
+* Estimate of time needed to complete: 1h
+
+* Start time: 11-00am
+
+* Finish time: 12-00pm 
+
+* Actual time needed to complete: 
+
+## Feature 4: Sort the images
+
+* Number and name of feature: Sort the images
+
+* Estimate of time needed to complete: 1h
 
 * Start time: 12-00am
 
 * Finish time: 1-00pm 
 
-* Actual time needed to complete: 1h 
-
+* Actual time needed to complete: 
