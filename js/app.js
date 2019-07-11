@@ -40,13 +40,7 @@ function optionListener() {
     if ($selectedImage === 'Filter by Keyword') {
       $('img').show();
     } else {
-      // $('img').not(`[alt="${$selectedImage}"]`).hide();
-      // $('h2').not(`[alt="${$selectedImage}"]`).hide();
-      // $('p').not(`[alt="${$selectedImage}"]`).hide();
       $(`section[keyword!=${$selectedImage}]`).hide();
-      //   $(`img[alt="${$selectedImage}"]`).show();
-      //   $(`h2[keyword="${$selectedImage}"]`).show();
-      //   $(`p[keyword="${$selectedImage}"]`).show();
       $(`section[keyword=${$selectedImage}]`).show();
     }
   })
