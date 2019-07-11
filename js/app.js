@@ -48,7 +48,7 @@ function optionListener() {
 
 function titleSortListener() { 
   $('#title').click( () => { 
-    Images.list.sort( (a,b) => a.title > b.title)
+    Images.list.sort( (a,b) => a.title > b.title ? 1 : a.title < b.title ? -1 : 0);
     console.log(Images.list);
     clearAllImages();
     displayAllImages();
@@ -57,8 +57,8 @@ function titleSortListener() {
 
 function hornSortListener() { 
   $('#horn').click( () => { 
-    console.log('went in');
-    Images.list.sort( (a,b) => a.horn - b.horn)
+    Images.list.sort( (a,b) => a.horns > b.horns ? 1 : a.horns < b.horns ? -1 : 0);
+    console.log(Images.list);
     clearAllImages();
     displayAllImages();
   })
