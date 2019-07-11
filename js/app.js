@@ -33,7 +33,7 @@ Images.prototype.displayImage = function() {
   console.log(typeof this.title);
   const photoTemplate = $('#photo-template').html();
   const photoTemplateScript = Handlebars.compile(photoTemplate);
-  const image = {'title': this.title, 'image_url': this.image_url, 'description': this.description};
+  const image = {'title': this.title, 'image_url': this.image_url, 'description': this.description, 'keyword': this.keyword};
   const html = photoTemplateScript(image);
   $('main').append(html);
 
@@ -41,8 +41,14 @@ Images.prototype.displayImage = function() {
 
 Images.prototype.displayOptions = function() { 
   if (!optionArray.includes(this.keyword)) {
-    $('select').append(`<option>${this.keyword}</option>`);
+
     optionArray.push(this.keyword);
+    const optionTemplate = $('#option-template').html();
+    const optionTemplateScript = Handlebars.compile(optionTemplate);
+    const option = {'keyword': this.keyword};
+    const html = optionTemplateScript(option);
+    $('select').append(html);
+
   }
 }
 
@@ -50,7 +56,6 @@ function optionListener() {
   $('select').change( () => { 
     const $selectedImage = $('select option:selected').text();
     console.log($selectedImage);
-    
     $('img').not(`[alt="${$selectedImage}"]`).hide();
     $('h2').not(`[alt="${$selectedImage}"]`).hide();
     $('p').not(`[alt="${$selectedImage}"]`).hide();
