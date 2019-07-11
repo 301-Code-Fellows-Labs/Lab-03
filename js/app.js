@@ -55,13 +55,15 @@ Images.prototype.displayOptions = function() {
 function optionListener() { 
   $('select').change( () => { 
     const $selectedImage = $('select option:selected').text();
-    console.log($selectedImage);
-    $('img').not(`[alt="${$selectedImage}"]`).hide();
-    $('h2').not(`[alt="${$selectedImage}"]`).hide();
-    $('p').not(`[alt="${$selectedImage}"]`).hide();
-    $(`img[alt="${$selectedImage}"]`).show();
-    $(`h2[keyword="${$selectedImage}"]`).show();
-    $(`p[keyword="${$selectedImage}"]`).show();
-
+    if ($selectedImage === 'Filter by Keyword') {
+      $('img').show();
+    } else {
+      $('img').not(`[alt="${$selectedImage}"]`).hide();
+      $('h2').not(`[alt="${$selectedImage}"]`).hide();
+      $('p').not(`[alt="${$selectedImage}"]`).hide();
+      $(`img[alt="${$selectedImage}"]`).show();
+      $(`h2[keyword="${$selectedImage}"]`).show();
+      $(`p[keyword="${$selectedImage}"]`).show();
+    }
   })
 }
